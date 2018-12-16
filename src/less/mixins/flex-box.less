@@ -1,0 +1,56 @@
+.display-flex() {
+  display: -webkit-flex;
+  display: -ms-flexbox; // IE10 uses -ms-flexbox
+  display: -ms-flex; // IE11
+  display: flex;
+}
+
+.flex-direction(@direction) {
+  -webkit-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+}
+
+.flex-basis(@basis) {
+  -ms-flex-preferred-size: @basis;
+  flex-basis: @basis;
+}
+
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+  -ms-flex-grow: @grow;
+  flex-grow: @grow;
+}
+
+.flex-wrap(@wrap) {
+  -webkit-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+.flex(@flex) {
+  -webkit-box-flex: @flex;
+  -moz-box-flex: @flex;
+  -webkit-flex: @flex;
+  -ms-flex: @flex;
+  flex: @flex;
+}
+
+.align-items(@align) {
+  -webkit-align-items: @align;
+  align-items: @align;
+}
+
+.align-content(@align) {
+  -webkit-align-content: @align;
+  align-content: @align;
+}
+
+.align-self(@align) {
+  -ms-flex-item-align: @align;
+  align-self: @align;
+}
+
+.justify-content(@justify) {
+  -webkit-justify-content: @justify;
+  justify-content: @justify;
+}

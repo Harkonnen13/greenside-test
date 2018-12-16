@@ -1,0 +1,49 @@
+@import '../../less/mixins.less';
+@import '../../less/vars.less';
+
+.radio-button{
+
+  &__label {
+    color: @label-color;
+    cursor: pointer;
+    
+    .display-flex();
+    .align-items(center);
+  }
+  
+  &__circle {
+    min-width: 22px;
+    min-height: 22px;
+    padding-right: 8px;
+    background-repeat: no-repeat;
+    background-image: url('../../img/radio-button.png');
+  }
+  
+  &__input{
+    display: none;
+    
+    &:checked + .radio-button__label {
+      color: black;
+    }
+    &:hover + .radio-button__label {
+      color: @label-hover-color
+    }
+    &:disabled + .radio-button__label {
+      color: @label-disabled-color
+    }
+
+    &:active + .radio-button__label .radio-button__circle {
+      background-image: url('../../img/radio-button-checked.png');
+    }
+    &:hover + label .radio-button__circle {
+      background-image: url('../../img/radio-button-hover.png');
+    }
+    &:checked + label .radio-button__circle {
+      background-image: url('../../img/radio-button-checked.png') !important;
+    }
+    &:disabled + label .radio-button__circle {
+      background-image: url('../../img/radio-button-disabled.png') !important;
+    }
+  }
+}
+

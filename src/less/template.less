@@ -1,0 +1,46 @@
+@import './mixins.less';
+@import './vars.less';
+
+.submit-btn{
+  background: @submit-btn-bg-color;
+  border: none;
+  color: @submit-btn-color;
+  height: 58px;
+  outline: none;
+  width: 210px;
+  font: inherit;
+  .border-radius(40px);
+
+  &:active{
+    background: @submit-btn-bg-pressed-color !important;
+  }
+  &:hover{
+    background: @submit-btn-bg-hover-color;
+  }
+  &:disabled{
+    background: @submit-btn-bg-disabled-color !important;
+  }
+}
+
+.text-input{
+  height: 58px;
+  outline: none;
+  border: 1px solid @text-input-border-color;
+  resize: none;
+  font: inherit;
+  .border-radius(4px);
+  .placeholder({
+    color: @placeholder-color;
+  });
+  
+  &:focus{
+    border-color: @text-input-border-focus-color !important;
+  }
+  &:invalid {
+    border-color: @text-input-border-invalid-color !important;
+  }
+  &:disabled{
+    border-color: transparent !important;
+    color: @text-input-border-color !important;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../less/mixins.less';
+@import '../../less/vars.less';
+
+.label-input{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__label{
+    height: 36px;
+    line-height: 36px;
+    color: @label-color;
+
+    &_disabled{
+      color: @label-disabled-color !important;
+    }
+  }
+
+  &__input{
+    padding: 0 16px;
+    cursor: pointer;
+    &:invalid {
+      & ~ .label-input__error {
+        visibility: visible
+      }
+    }
+  }
+
+  &__error{
+    visibility: hidden;
+    padding-top: 4px;
+    color: @label-invalid-color;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,14 @@
+.border-radius(@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.border-radius-all(@top-left-r: 4px, 
+                   @top-right-r: 4px, 
+                   @bot-right-r: 4px, 
+                   @bot-left-r: 4px) {
+  -webkit-border-radius: @top-left-r @top-left-r @bot-right-r @bot-left-r;
+  -moz-border-radius: @top-left-r @top-left-r @bot-right-r @bot-left-r;
+  border-radius: @top-left-r @top-left-r @bot-right-r @bot-left-r;
+}

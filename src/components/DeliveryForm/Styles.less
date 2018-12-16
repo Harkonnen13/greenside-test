@@ -1,0 +1,30 @@
+@import '../../less/mixins.less';
+
+.df {
+  padding: 0 32px;
+  .display-flex();
+  .flex-wrap(wrap);
+  .justify-content(space-between);
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+
+  &_col-50 {
+    @media (min-width: 769px) {
+      width: ~'calc(50% - 8px)' !important;
+    }
+  }
+
+  &__label-textarea,
+  &__label-input {
+    padding-top: 16px;
+  }
+
+  &__submit {
+    padding: 32px 0;
+    width: 100%;
+    .display-flex();
+    .justify-content(flex-end);
+  }
+}

@@ -1,0 +1,119 @@
+@import '../../less/mixins.less';
+@import '../../less/vars.less';
+
+.dc{
+  height: 100%;
+  background: #f6f6f6;
+
+  &__container{
+    font-size: 16px;
+    max-width: 996px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      border-bottom: 1px solid @tab-border-color;
+    }
+  }
+
+  &__title{
+    font-size: 32px;
+    padding: 32px 0;
+    @media (max-width: 768px) {
+      padding: 32px 16px;
+    }
+  }
+  
+  &__tabs{
+    .display-flex();
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__section{
+    width: 100%;
+  }
+
+  &__content{
+    width: 100%;
+    background: #fff;
+    @media (max-width: 768px) {
+      border-top: 1px solid @tab-border-color;
+    }
+
+    &_hidden{
+      display: none;
+    }
+  }
+
+  &__tab{
+    cursor: pointer;
+    display: block;
+    width: 173px;
+    text-align: center;
+    line-height: 58px;
+    height: 58px;
+    color: @tab-color;
+    background-image: url('../../img/tab.png');
+    margin-left: -30px;
+    outline: none;
+
+    &:first-child{
+      margin-left: 0;
+    }
+
+    &:hover{
+      color: @tab-hover-color;
+    }
+
+    &_selected{
+      z-index: 1;
+      color: @tab-selected-color;
+      background-image: url('../../img/active-tab.png');
+    }
+  }
+
+  &__text{
+    padding-right: 30px;
+  }
+
+  &__expander{
+    cursor: pointer;
+    padding: 0px 16px;
+    border-top: 1px solid @tab-border-color;
+    background: #fff;
+    line-height: 58px;
+    height: 58px;
+    color: @tab-color;
+
+    .display-flex();
+    .flex-direction(row);
+    .justify-content(space-between);
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+    
+    &:hover{
+      color: @tab-hover-color;
+      & > .dc__arrow{
+        background-image: url('../../img/arrow.png');
+      }
+    }
+
+    &_selected{
+      color: @tab-selected-color;
+      & > .dc__arrow{
+        transform: rotate(180deg)!important;
+        background-image: url('../../img/arrow.png')
+      }
+    }
+  }
+
+  &__arrow{
+    width: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url('../../img/arrow_disabled.png')
+  }
+}
